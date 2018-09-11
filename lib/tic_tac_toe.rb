@@ -56,7 +56,7 @@ class TicTacToe
       move(user_move, current_player())
       display_board()
     else
-      turn(board)
+      turn()
     end
   end
 end
