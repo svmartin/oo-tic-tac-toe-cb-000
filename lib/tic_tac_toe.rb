@@ -60,35 +60,35 @@ class TicTacToe
     end
   end
 
-  def won?(board)
+  def won?
     winner_exist = false
-    return false if board.all? { |entry| entry == " "}
+    return false if @board.all? { |entry| entry == " "}
 
     WIN_COMBINATIONS.each do |winner|
-      row = [board[winner[0]], board[winner[1]], board[winner[2]]]
+      row = [@board[winner[0]], @board[winner[1]], @board[winner[2]]]
       return winner if row.count("X") == 3 || row.count("O") == 3
     end
     winner_exist
   end
 
-  def full?(board)
-    board.count == 9 && board.include?("X") && !board.include?(" ")
+  def full?
+    board.count == 9 && @board.include?("X") && !@board.include?(" ")
   end
 
-  def over?(board)
-    won?(board) || full?(board) || draw?(board) ? true : false
+  def over?
+    won? || full? || draw? ? true : false
   end
 
-  def draw?(board)
-    return true if !won?(board) && full?(board)
+  def draw?
+    return true if !won? && full?
     return false
   end
 
-  def winner(board)
-    if won?(board)
-      board[won?(board)[0]]
+  def winner
+    if won?
+      board[won?[0]]
     else
       return nil
     end
-  end  
+  end
 end
