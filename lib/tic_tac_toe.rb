@@ -42,7 +42,6 @@ class TicTacToe
     total = 0
     total += @board.count("X")
     total += @board.count("O")
-    total
   end
 
   def current_player()
