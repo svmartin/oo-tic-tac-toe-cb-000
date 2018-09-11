@@ -72,7 +72,7 @@ class TicTacToe
   end
 
   def full?
-    board.count == 9 && @board.include?("X") && !@board.include?(" ")
+    @board.count == 9 && @board.include?("X") && !@board.include?(" ")
   end
 
   def over?
