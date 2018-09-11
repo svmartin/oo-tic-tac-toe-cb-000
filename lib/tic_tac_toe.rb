@@ -33,4 +33,19 @@ class TicTacToe
   def position_taken?(index)
     !(@board[index].nil? || @board[index] == " ")
   end
+
+  def valid_move?(board, position)
+    !position_taken?(board, position) && position >= 0 and position <= 8
+  end
+
+  def turn_count(board)
+    total = 0
+    total += board.count("X")
+    total += board.count("O")
+    total
+  end
+
+  def current_player(board)
+    turn_count(board).even? ? "X" : "O"
+  end
 end
